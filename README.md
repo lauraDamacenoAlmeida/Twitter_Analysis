@@ -21,3 +21,33 @@ Esses códigos foram utilizados no meu artigo onde eu explico com mais detalhes 
 9. [Unidecode](https://pypi.org/project/Unidecode/): 
 
 10. [Json](https://docs.python.org/3/library/json.html): Para ler os dados do arquivo json
+
+
+## Entendendo a coleta e o processamento dos dados
+Para você extrair os dados do Twitter, precisa colocar nos parâmetros: chave, chave secrete, token, token secreto, o assunto que você precisa e a lingua(se é em português: pt, se é em inglês: en, etc..) no seguinte método:
+
+```
+generate_tweet('xx','xx','xxx','xxx', 'assunto','pt')
+
+```
+
+Após isso os dados extraídos do twitter serão armazenados em um arquivo chamado 'tweets.json'
+
+```
+conteudo = open('tweets.json').read()
+
+```
+
+E depois esse arquivo é lido através da biblioteca json, e é necessário normalizá-lo por conta da estrutura que os dados estão vindo.
+
+```
+_json = json.loads(conteudo)
+df = json_normalize(_json)
+
+```
+Após isso essas informações são transformadas em DataFrame para facilitar a manipulação dos dados.
+
+```
+df= pd.read_json(conteudo)
+
+```
