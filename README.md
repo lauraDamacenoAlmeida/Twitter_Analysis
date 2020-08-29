@@ -23,6 +23,13 @@ Esses códigos foram utilizados no meu artigo onde eu explico com mais detalhes 
 10. [Json](https://docs.python.org/3/library/json.html): Para ler os dados do arquivo json
 
 
+## Estrutura do projeto
+Atualmente o projeto está dividido assim:
+
+- Analysis_tweets.ipynb: contém o código construído.
+- tweets.json: dados coletados do twitter gerados pelo arquivo acima.
+
+
 ## Entendendo a coleta e o processamento dos dados
 Para você extrair os dados do Twitter, precisa colocar nos parâmetros: chave, chave secrete, token, token secreto, o assunto que você precisa e a lingua(se é em português: pt, se é em inglês: en, etc..) no seguinte método:
 
@@ -51,3 +58,4 @@ Após isso essas informações são transformadas em DataFrame para facilitar a 
 df= pd.read_json(conteudo)
 
 ```
+
